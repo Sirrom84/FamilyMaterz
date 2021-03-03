@@ -5,7 +5,7 @@ import CarouselCardItem, {SLIDER_WIDTH, ITEM_WIDTH} from "./CarouselCardItem";
 import data from "./data";
 
 const CarouselCards = () => {
-	const [index, SetiIndex] = React.useState(0);
+	const [index, setIndex] = React.useState(0);
 	const isCarousel = React.useRef(null);
 
 	return (
@@ -18,7 +18,7 @@ const CarouselCards = () => {
 				renderItem={CarouselCardItem}
 				sliderWidth={SLIDER_WIDTH}
 				itemWidth={ITEM_WIDTH}
-				inactiveSlideShift={0}
+				onSnapToItem={(index) => setIndex(index)}
 				useScrollView={true}
 			/>
 			<Pagination
